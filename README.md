@@ -53,6 +53,4 @@ Si deseas contribuir con ideas, mejoras o correcciones, ¡no dudes en hacer un p
 
 ---
 
-## 📬 Contacto
-
-Si tienes alguna duda o simplemente quieres hablar de Java, puedes contactarme en [LinkedIn]([https://www.linkedin.com/in/lucas-nu%C3%B1ez-602543239/](/)) 🤝.
+Muchas gracias por leer! 😊
