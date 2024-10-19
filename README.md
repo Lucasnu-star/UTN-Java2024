@@ -47,7 +47,7 @@
 
 ## 🚧 En Construcción
 
-Este repositorio está en constante evolución. Actualizaré frecuentemente con nuevas guías, ejercicios y proyectos. ¡Sigue el progreso y acompáñame en este viaje de aprendizaje! 😊
+Este repositorio está en constante evolución. Actualizaré frecuentemente con nuevas guías, ejercicios y proyectos. 😊
 
 ---
 
