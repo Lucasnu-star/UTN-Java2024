@@ -33,10 +33,14 @@
 
 ## 📈 Progreso
 
-| Herencia y polimosfirmo | ✅ Completado |}
+| Herencia y polimosfirmo | ✅ Completado |
+
 | Encapsulamiento y clases abstractas | ✅ Completado |
+
 | Colecciones, enum,  static | ✅ Completado |
+
 | Excepciones, generecidad, Json, JavaFX | 🔄 En progreso |
+
 | Proyecto Final | 📅 Próximamente |
 
 ---
