@@ -4,6 +4,7 @@ import ClasesPrueba.Persona;
 import Punto1.Almacenamiento;
 import Punto3.OperacionMatematica;
 import PuntoBonusTrack.Aeropuerto;
+import PuntoBonusTrack.Avion;
 import PuntoBonusTrack.Hangares;
 import PuntoBonusTrack.TipoAviones.Comercial.Comercial;
 import PuntoBonusTrack.TipoAviones.Comercial.Servicios;
@@ -58,7 +59,7 @@ public class Main {
  */
 
         //Punto bonus
-        Aeropuerto aeropuestoAstorPiazzola = new Aeropuerto("Astor Piazzolla", "54353" , "colon 232" , 1);
+        Aeropuerto aeropuestoAstorPiazzola = new Aeropuerto("Astor Piazzolla", "54353" , "colon 232" , 2);
 
         Servicios serviciosAvionComercial= new Servicios();
         serviciosAvionComercial.agregarServicio("Azafatas");
@@ -77,8 +78,10 @@ public class Main {
         Hangares<Object> hangarAvionesMilitares= new Hangares<>(aeropuestoAstorPiazzola);
         Hangares<Object> hangarAvionesDeCarga= new Hangares<>(aeropuestoAstorPiazzola);
 
+
         System.out.println("Agregar avion al hangar de la clase generica");
-        hangarAvionesComerciales.agregarAvion(avionComercial1);
+        hangarAvionesComerciales.agregarAvion(avionComercial1);  // Me tira un NullPointerException
+
 
         System.out.println("-------------------");
         System.out.println("Encontrado");
@@ -98,5 +101,26 @@ public class Main {
 
 
 
+        /**
+         * No se como manejar que verifique si pueden entrar al aeropuerto y despues mandarlos al hangar de cada uno.
+         */
+        /*
+        aeropuestoAstorPiazzola.ingresarAvionAlAeropuerto(avionComercial1);
+        aeropuestoAstorPiazzola.ingresarAvionAlAeropuerto(avionMilitar1);
+
+        System.out.println("Tendria q tirar que no se puede");
+        aeropuestoAstorPiazzola.ingresarAvionAlAeropuerto(avionDeCarga1);
+
+        System.out.println("Los aviones dentro del aeropuerto astor piazzola");
+        aeropuestoAstorPiazzola.avionesDentroDelAeropuerto();
+
+        System.out.println("Tendria que tirar que no se encuentra");
+
+        aeropuestoAstorPiazzola.retirarAvionDelAeropuerto(avionDeCarga1);
+
+         */
+
     }
+
+
 }

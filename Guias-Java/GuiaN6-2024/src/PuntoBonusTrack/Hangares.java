@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Hangares <T> {
 
-
+    Aeropuerto aeropuerto;
     //Array aviones generico
     private ArrayList<T> hangarAviones = new ArrayList<>();
 
@@ -13,11 +13,22 @@ public class Hangares <T> {
         this.hangarAviones = new ArrayList<>();
     }
 
-    //Metodos
-    public  void agregarAvion(T t)
+    //Metodos  Intente asigarle el Aeropuerto y aca usar el metodo ingreAvion que devuelve un Boolea, si es true el avion ingresa el hangar automatiamente sino no. (Esta bien hecho?)
+    public  Boolean agregarAvion(T t)
     {
+        boolean entro = false;
+        entro = aeropuerto.ingresarAvionAlAeropuerto((Avion) t);
+        if(entro)
+        {
             hangarAviones.add(t);
+            System.out.println("Entro al hangar");
+        }
+        else
+        {
+            System.out.println("No entro al hangar");
+        }
 
+return entro;
 
     }
 
