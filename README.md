@@ -1,8 +1,8 @@
 > [!NOTE]  
-> En guias, la guia N6, el punto bonus. Tengo problemas para hacer el punto que los aviones no pueden sobrepasarse segun el permitido de aviones por Aeropuerto. Lo pense como que el aeropuerto guarda los hangares que tiene y ahi verifica si el avion ingresado al aerpuerto puede y dsp se resguarda en su Hangar
+> En guias, la guia N6, el punto bonus. Tengo problemas para hacer el punto que los aviones no pueden sobrepasarse segun el permitido de aviones por Aeropuerto. Lo pense como que el aeropuerto guarda los hangares que tiene y ahi verifica si el avion ingresado al aerpuerto puede y dsp se resguarda en su hangar correspondiente
 
 
-
+ 
 # 🚀 Mi Aprendizaje en Java
 
 ¡Bienvenido a mi repositorio de **Java**! 🎉 Este espacio está dedicado a documentar todo mi recorrido de aprendizaje en este lenguaje de programación. Aquí encontrarás desde guías detalladas, ejercicios prácticos, hasta parciales que me ayudarán a fortalecer mis conocimientos en Java.
