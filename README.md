@@ -1,3 +1,7 @@
+> .[!NOTE]
+> En guias, el punto N6. Tengo problemas para hacer el punto que los aviones no pueden sobrepasarse segun el permitido de aviones por Aeropuerto
+
+
 # 🚀 Mi Aprendizaje en Java
 
 ¡Bienvenido a mi repositorio de **Java**! 🎉 Este espacio está dedicado a documentar todo mi recorrido de aprendizaje en este lenguaje de programación. Aquí encontrarás desde guías detalladas, ejercicios prácticos, hasta parciales que me ayudarán a fortalecer mis conocimientos en Java.
