@@ -1,4 +1,5 @@
-> .[!NOTE]
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
 > En guias, el punto N6. Tengo problemas para hacer el punto que los aviones no pueden sobrepasarse segun el permitido de aviones por Aeropuerto
 
 
