@@ -1,8 +1,8 @@
 > [!IMPORTANT]  
-> El punto lo tienene en la clase aeropuerto.
+> El punto completo lo tiene en la clase Aeropuerto.
 
 > [!NOTE]  
-> En guias, la guia N6, el punto bonus. Tengo problemas para hacer el punto que los aviones no pueden sobrepasarse segun el permitido de aviones por Aeropuerto. Lo pense como que el aeropuerto guarda los hangares que tiene y ahi verifica si el avion ingresado al aerpuerto puede y dsp se resguarda en su hangar correspondiente
+> En guias, la guia N6, el punto bonus.  El programa esta comentado todos los problemas que tengo. Basicamente es que no se como hacer con la clase Aeropuerto y hangar, para que verifique si el avion puede o no ingresar al Aeropuerto y si puede que ingrese directamente al Hangar. Lo mismo cuando se retira.
 
 
  
