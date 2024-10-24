@@ -1,5 +1,5 @@
 > [!NOTE]  
-> En guias, el punto N6. Tengo problemas para hacer el punto que los aviones no pueden sobrepasarse segun el permitido de aviones por Aeropuerto. Lo pense como que el aeropuerto guarda los hangares que tiene y ahi verifica si el avion ingresado al aerpuerto puede y dsp se resguarda en su Hangar
+> En guias, la guia N6, el punto bonus. Tengo problemas para hacer el punto que los aviones no pueden sobrepasarse segun el permitido de aviones por Aeropuerto. Lo pense como que el aeropuerto guarda los hangares que tiene y ahi verifica si el avion ingresado al aerpuerto puede y dsp se resguarda en su Hangar
 
 
 
