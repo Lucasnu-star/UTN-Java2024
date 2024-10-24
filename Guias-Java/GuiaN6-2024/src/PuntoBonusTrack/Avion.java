@@ -6,15 +6,15 @@ public class Avion  implements iAviones{
 
     //Atributos
     private String nombreModelo;
-    private String marcar;
+    private String marca;
     private int capacidadCombustible;
     private String tipoMotor;
     private int cantidadAsientos;
 
     //Constructor
-    public Avion(String nombreModelo, String marcar, int capacidadCombustible, String tipoMotor, int cantidadAsientos) {
+    public Avion(String nombreModelo, String marca, int capacidadCombustible, String tipoMotor, int cantidadAsientos) {
         this.nombreModelo = nombreModelo;
-        this.marcar = marcar;
+        this.marca = marca;
         this.capacidadCombustible = capacidadCombustible;
         this.tipoMotor = tipoMotor;
         this.cantidadAsientos = cantidadAsientos;
@@ -25,7 +25,7 @@ public class Avion  implements iAviones{
         return nombreModelo;
     }
     public String getMarcar() {
-        return marcar;
+        return marca;
     }
     public int getCapacidadCombustible() {
         return capacidadCombustible;
@@ -42,7 +42,7 @@ public class Avion  implements iAviones{
         this.nombreModelo = nombreModelo;
     }
     public void setMarcar(String marcar) {
-        this.marcar = marcar;
+        this.marca = marcar;
     }
     public void setCapacidadCombustible(int capacidadCombustible) {
         this.capacidadCombustible = capacidadCombustible;
@@ -59,7 +59,7 @@ public class Avion  implements iAviones{
     public String toString() {
         return "Avion{" +
                 "nombreModelo='" + nombreModelo + '\'' +
-                ", marcar='" + marcar + '\'' +
+                ", marcar='" + marca + '\'' +
                 ", capacidadCombustible=" + capacidadCombustible +
                 ", tipoMotor='" + tipoMotor + '\'' +
                 ", cantidadAsientos=" + cantidadAsientos +

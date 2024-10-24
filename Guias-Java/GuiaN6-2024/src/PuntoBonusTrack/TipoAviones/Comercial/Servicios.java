@@ -19,4 +19,13 @@ public class Servicios {
     {
         listaServicios.remove(servicio);
     }
+
+    //ToString
+
+    @Override
+    public String toString() {
+        return "Servicios{" +
+                "listaServicios=" + listaServicios +
+                '}';
+    }
 }

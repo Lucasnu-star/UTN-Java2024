@@ -1,5 +1,7 @@
 package PuntoBonusTrack;
 
+import java.util.ArrayList;
+
 /**
  * Desarrolle un main e invoque únicamente a las funciones que compilen
  * correctamente.
@@ -34,7 +36,7 @@ package PuntoBonusTrack;
  * Además, diseñe un método que haga despegar a todos los aviones de un
  * determinado hangar enviado por parámetro.
  */
-public class Aeropuerto {
+public class Aeropuerto  {
 
         //Atributos
         private String nombre;
@@ -42,15 +44,59 @@ public class Aeropuerto {
         private String direccion;
         private int capacidadOperacion;
 
+
         //Constructor
         public Aeropuerto(String nombre, String codigo, String direccion, int capacidadOperacion) {
                 this.nombre = nombre;
                 this.codigo = codigo;
                 this.direccion = direccion;
                 this.capacidadOperacion = capacidadOperacion;
+
+
+
+        }
+
+        //Getters
+        public String getNombre() {
+                return nombre;
+        }
+        public String getDireccion() {
+                return direccion;
+        }
+        public String getCodigo() {
+                return codigo;
+        }
+        public int getCapacidadOperacion() {
+                return capacidadOperacion;
         }
 
 
+        //Setters
+        public void setNombre(String nombre) {
+                this.nombre = nombre;
+        }
+        public void setCodigo(String codigo) {
+                this.codigo = codigo;
+        }
+        public void setDireccion(String direccion) {
+                this.direccion = direccion;
+        }
+        public void setCapacidadOperacion(int capacidadOperacion) {
+                this.capacidadOperacion = capacidadOperacion;
+        }
+        //ToString
 
+
+        @Override
+        public String toString() {
+                return "Aeropuerto{" +
+                        "nombre='" + nombre + '\'' +
+                        ", codigo='" + codigo + '\'' +
+                        ", direccion='" + direccion + '\'' +
+                        ", capacidadOperacion=" + capacidadOperacion +
+                        '}';
+        }
+
+        //Metodos
 
 }

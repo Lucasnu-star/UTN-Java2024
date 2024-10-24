@@ -10,7 +10,7 @@ public class DeCarga  extends Avion implements iDeCarga{
         private int cantidadKilos;
 
         //Constructor
-        public DeCarga(String nombreModelo, String marcar, int capacidadCombustible, String tipoMotor, int cantidadAsientos, Productos_Transportar productos, int cantidadKilos) {
+        public DeCarga(String nombreModelo, String marcar, int capacidadCombustible, String tipoMotor,  Productos_Transportar productos, int cantidadKilos) {
         super(nombreModelo, marcar, capacidadCombustible, tipoMotor, 0);
         this.productos = productos;
         this.cantidadKilos = cantidadKilos;

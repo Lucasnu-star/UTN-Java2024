@@ -37,7 +37,7 @@ public class Comercial  extends Avion  implements iComercial_Privado {
     public String toString() {
         return  super.toString() +
                 "cantidadAzafatas=" + cantidadAzafatas +
-                ", servicios=" + servicios;
+                ", servicios=" + servicios.toString();
     }
 
     //Metodos
