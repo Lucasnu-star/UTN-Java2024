@@ -1,11 +1,4 @@
-> [!IMPORTANT]  
-> El punto completo lo tiene en la clase Aeropuerto.
 
-> [!NOTE]  
-> En guias, la guia N6, el punto bonus.  El programa esta comentado todos los problemas que tengo. Basicamente es que no se como hacer con la clase Aeropuerto y hangar, para que verifique si el avion puede o no ingresar al Aeropuerto y si puede que ingrese directamente al Hangar. Lo mismo cuando se retira.
-
-
- 
 # 🚀 Mi Aprendizaje en Java
 
 ¡Bienvenido a mi repositorio de **Java**! 🎉 Este espacio está dedicado a documentar todo mi recorrido de aprendizaje en este lenguaje de programación. Aquí encontrarás desde guías detalladas, ejercicios prácticos, hasta parciales que me ayudarán a fortalecer mis conocimientos en Java.
