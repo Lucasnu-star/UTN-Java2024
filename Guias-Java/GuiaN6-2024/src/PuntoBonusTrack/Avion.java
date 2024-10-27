@@ -69,7 +69,7 @@ public class Avion  implements iAviones{
     //Metodos
     @Override
     public String aterriza() {
-        return "Aterriza";
+        return " aterriza";
     }
     @Override
     public String vuela() {
@@ -77,6 +77,6 @@ public class Avion  implements iAviones{
     }
     @Override
     public String despega() {
-        return "Despega";
+        return " despega";
     }
 }

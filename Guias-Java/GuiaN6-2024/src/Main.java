@@ -1,10 +1,4 @@
-import ClasesPrueba.Auto;
-import ClasesPrueba.Perro;
-import ClasesPrueba.Persona;
-import Punto1.Almacenamiento;
-import Punto3.OperacionMatematica;
 import PuntoBonusTrack.Aeropuerto;
-import PuntoBonusTrack.Avion;
 import PuntoBonusTrack.Hangares;
 import PuntoBonusTrack.TipoAviones.Comercial.Comercial;
 import PuntoBonusTrack.TipoAviones.Comercial.Servicios;
@@ -59,66 +53,95 @@ public class Main {
  */
 
         //Punto bonus
-        Aeropuerto aeropuestoAstorPiazzola = new Aeropuerto("Astor Piazzolla", "54353" , "colon 232" , 2);
 
-        Servicios serviciosAvionComercial= new Servicios();
-        serviciosAvionComercial.agregarServicio("Azafatas");
-        serviciosAvionComercial.agregarServicio("Seguridad a bordo");
-        serviciosAvionComercial.agregarServicio("Programas de entretenimiento");
-        Comercial avionComercial1= new Comercial("bbd", "pe" , 30, "Bx4" , 40, 6,serviciosAvionComercial );
-        Productos_Transportar productosAvionDeCarga= new Productos_Transportar();
-        productosAvionDeCarga.agregarProducto("Buker muebles");
-        productosAvionDeCarga.agregarProducto("Electronica");
-        DeCarga avionDeCarga1= new DeCarga("dfd", "br" , 20, "gt4" , productosAvionDeCarga , 200);
-        Militar avionMilitar1 = new Militar("ndf", "dr" , 40 , "ju7" ,15, eSistemaArma.AIRE_AIRE , 350);
-        Militar avionMilitar2 = new Militar("gds", "bh" , 30 , "h64" ,12, eSistemaArma.AIRE_TIERRA , 250);
-        Privado avionPrivado = new Privado("hh7", "jku" , 30 , "ged5" , 100, eJacuzzi.TRUE, "543453");
-
-        Hangares<Object> hangarAvionesComerciales = new Hangares<>(aeropuestoAstorPiazzola);
-        Hangares<Object> hangarAvionesMilitares= new Hangares<>(aeropuestoAstorPiazzola);
-        Hangares<Object> hangarAvionesDeCarga= new Hangares<>(aeropuestoAstorPiazzola);
+        // Se crea el aeropuerto astor
+        Aeropuerto aeropuertoAstorPiazzolla = new Aeropuerto("Astor Piazzolla", "23232", "colon 333", 5);
 
 
-        System.out.println("Agregar avion al hangar de la clase generica");
-        hangarAvionesComerciales.agregarAvion(avionComercial1);  // Me tira un NullPointerException
+     //Crear Aviones
+
+        //Aviones Comerciales
+        Servicios serviciosAvionesComerciales= new Servicios();
+        serviciosAvionesComerciales.agregarServicio("Comida");
+        Comercial avionComercial1= new Comercial("sds" , "wew" , 20, "asedws" , 20, 3, serviciosAvionesComerciales);
+
+        //Aviones DeCarga
+        Productos_Transportar productosAvionesDeCarga = new Productos_Transportar();
+        productosAvionesDeCarga.agregarProducto("Cajones");
+        DeCarga avionDeCarga1= new DeCarga("sadfas" ," wew" , 10, "dfdf" , productosAvionesDeCarga , 12);
+
+        //Aviones Militares
+        Militar avioneMilitar1= new Militar("sdfds", "sdsd" , 10, "sds" , 13, eSistemaArma.AIRE_TIERRA, 200);
+
+        //Aviones Privados
+        Privado avionPrivado1 = new Privado("sdfasdf" , "wew" , 23, "asdffas" , 20, eJacuzzi.TRUE , "23232");
+
+        //Se crean los hangares
+        Hangares<Object> hangarAvionesComerciales= new Hangares<>("Hangar aviones comerciales", aeropuertoAstorPiazzolla);
+        Hangares<Object> hangarAvionesDeCarga= new Hangares<>("Hangar aviones de carga", aeropuertoAstorPiazzolla);
+        Hangares<Object> hangarAvionesMilitares= new Hangares<>("Hangar aviones militares", aeropuertoAstorPiazzolla);
+        Hangares<Object> hangarAvionesPrivados= new Hangares<>("Hangar aviones privados" , aeropuertoAstorPiazzolla);
+
+        //Registrar los hangares en los aeropuertos
+        aeropuertoAstorPiazzolla.registrarHangar(hangarAvionesComerciales);
+        aeropuertoAstorPiazzolla.registrarHangar(hangarAvionesDeCarga);
+        aeropuertoAstorPiazzolla.registrarHangar(hangarAvionesMilitares);
+        aeropuertoAstorPiazzolla.registrarHangar(hangarAvionesPrivados);
 
 
-        System.out.println("-------------------");
-        System.out.println("Encontrado");
-        hangarAvionesComerciales.avionEncontrado(avionComercial1);
+        //Cuantos hangares hay en el aeropuerto
+        System.out.println(aeropuertoAstorPiazzolla.cuantosHangaresAeropuerto());
 
-        System.out.println("Agregar avion al hangar de la clase generica");
-        hangarAvionesMilitares.agregarAvion(avionMilitar1);
+        //Simulacion si se quiere hacer entrar un Avion llegado desde otra ciudad al aeropuerto
 
-        System.out.println("-------------------");
-        System.out.println("No encontrado");
-        hangarAvionesComerciales.avionEncontrado(avionMilitar2);
+        //Meto un avion de cada tipo para probar
 
-        System.out.println("-------------------");
-        System.out.println("No se puede agregar por limite de operacion por hangar en el Aeropuerto");
-        hangarAvionesMilitares.agregarAvion(avionMilitar2);
+        hangarAvionesComerciales.avionIngresaHangar(avionComercial1);
+
+        hangarAvionesPrivados.avionIngresaHangar(avionPrivado1);
+
+        hangarAvionesMilitares.avionIngresaHangar(avioneMilitar1);
+
+        hangarAvionesDeCarga.avionIngresaHangar(avionDeCarga1);
+
+        //Cuantos aviones x hangar.  Aca hay uno en el hangar Comercial
+        System.out.println( hangarAvionesComerciales.cuantosAvionesEnHangar());
+
+        //Se muestra todos los hangares que hay en el Aeropuerto Registrados.
+        System.out.println(  aeropuertoAstorPiazzolla.mostrarHangaresAeropuerto());
 
 
+        //Aca va a tirar todos los aviones que hay en el aeropuerto
+        System.out.println(aeropuertoAstorPiazzolla.avionesTotalAeropuerto());
 
+        //Simulacion si puede entrar o no el avion al Aeropuerto
 
-        /**
-         * No se como manejar que verifique si pueden entrar al aeropuerto y despues mandarlos al hangar de cada uno.
-         */
-        /*
-        aeropuestoAstorPiazzola.ingresarAvionAlAeropuerto(avionComercial1);
-        aeropuestoAstorPiazzola.ingresarAvionAlAeropuerto(avionMilitar1);
+        //Este es el avion que quiere entrar
+        Comercial avionComercial2 = new Comercial("sds" , "sdsd" , 10, "sfsf", 15, 3, serviciosAvionesComerciales);
 
-        System.out.println("Tendria q tirar que no se puede");
-        aeropuestoAstorPiazzola.ingresarAvionAlAeropuerto(avionDeCarga1);
+        //Supongamos que el aeropuerto esta llegando al aeropuerto, manda una señal que va a entrar al aeropuerto si puede o no entrar.
+        //Se manda la señal
+        boolean entra = aeropuertoAstorPiazzolla.confirmarAvionEntraAlAeropuerto();
 
-        System.out.println("Los aviones dentro del aeropuerto astor piazzola");
-        aeropuestoAstorPiazzola.avionesDentroDelAeropuerto();
+        if(entra)
+            {
+                hangarAvionesComerciales.avionIngresaHangar(avionComercial2);
+                System.out.println(avionComercial2.aterriza());
+                //Tiene q haber 2, eso quiere decir que se incorporo en el hangar
+                System.out.println(hangarAvionesComerciales.cuantosAvionesEnHangar());
+            }
+        else
+        {
+            System.out.println("El avion no entro al aeropuerto");
+        }
 
-        System.out.println("Tendria que tirar que no se encuentra");
+        //Vamos a hacer que un avion salga
+        hangarAvionesPrivados.avionSaleHangar(avionPrivado1);
+        System.out.println(avionPrivado1.despega());
 
-        aeropuestoAstorPiazzola.retirarAvionDelAeropuerto(avionDeCarga1);
+        //Tiene que haber 0 porque lo hicimos despegar
+        System.out.println(hangarAvionesPrivados.cuantosAvionesEnHangar());
 
-         */
 
     }
 

@@ -4,74 +4,64 @@ import java.util.ArrayList;
 
 public class Hangares <T> {
 
-    Aeropuerto aeropuerto;
-    //Array aviones generico
-    private ArrayList<T> hangarAviones = new ArrayList<>();
+    private ArrayList<T> avionesEnHangar;
 
-    //Constuctor
-    public Hangares(Aeropuerto aeropuerto) {
-        this.hangarAviones = new ArrayList<>();
+    //Atributos
+    private String nombreTipoHangar;
+    private Aeropuerto nombreAeropuerto_Hangar;
+
+    //Constructor
+    public Hangares(String nombreTipoHangar, Aeropuerto nombreAeropuerto_Hangar) {
+        this.nombreTipoHangar = nombreTipoHangar;
+        this.nombreAeropuerto_Hangar = nombreAeropuerto_Hangar;
+        avionesEnHangar= new ArrayList<>();
     }
 
-    //Metodos  Intente asigarle el Aeropuerto y aca usar el metodo ingreAvion que devuelve un Boolea, si es true el avion ingresa el hangar automatiamente sino no. (Esta bien hecho?)
-    public  Boolean agregarAvion(T t)
+
+    //Getters
+    public String getNombreTipoHangar() {
+        return nombreTipoHangar;
+    }
+    public Aeropuerto getNombreAeropuerto_Hangar() {
+        return nombreAeropuerto_Hangar;
+    }
+
+    //Setters
+    public void setNombreTipoHangar(String nombreTipoHangar) {
+        this.nombreTipoHangar = nombreTipoHangar;
+    }
+    public void setNombreAeropuerto_Hangar(Aeropuerto nombreAeropuerto_Hangar) {
+        this.nombreAeropuerto_Hangar = nombreAeropuerto_Hangar;
+    }
+
+    //Metodos
+    public void avionIngresaHangar(T avion)
     {
-        boolean entro = false;
-        entro = aeropuerto.ingresarAvionAlAeropuerto((Avion) t);
-        if(entro)
-        {
-            hangarAviones.add(t);
-            System.out.println("Entro al hangar");
-        }
-        else
-        {
-            System.out.println("No entro al hangar");
-        }
-
-return entro;
-
+        avionesEnHangar.add(avion);
     }
 
-    public void eliminarAvionHangar(T t)
+    public void avionSaleHangar(T avion)
     {
-        hangarAviones.remove(t);
+        avionesEnHangar.remove(avion);
+    }
+    public int cuantosAvionesEnHangar()
+    {
+        return avionesEnHangar.size();
     }
 
-    public boolean buscarAvionHangar(T t)
-    {
-        boolean encontrado=false;
-        for(T tBuscar : hangarAviones)
-        {
-            if(tBuscar.equals(t))
-            {
-                encontrado= true;
-                break;
-            }
-        }
-        return encontrado;
-    }
 
-    public void avionEncontrado(T t)
-    {
-        boolean encontrado= buscarAvionHangar(t);
-        if(encontrado)
-        {
-            System.out.println( t.toString() + " esta en el hangar");
-        }
-        else{
-            System.out.println( t.toString() + " no esta en le hangar");
-        }
-    }
-public void getSize()
-    {
-        System.out.println(hangarAviones.size());
-    }
+
+
+
     //ToString
+
 
     @Override
     public String toString() {
         return "Hangares{" +
-                "hangarAviones=" + hangarAviones.toString() +
+                "avionesEnHangar=" + avionesEnHangar.toString() +
+                ", nombreTipoHangar='" + nombreTipoHangar + '\'' +
+                ", nombreAeropuerto_Hangar=" + nombreAeropuerto_Hangar +
                 '}';
     }
 }

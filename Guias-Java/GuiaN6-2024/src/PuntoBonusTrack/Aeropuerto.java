@@ -36,15 +36,16 @@ import java.util.ArrayList;
  * Además, diseñe un método que haga despegar a todos los aviones de un
  * determinado hangar enviado por parámetro.
  */
-public class Aeropuerto  {
+public class Aeropuerto {
 
         //Atributos
         private String nombre;
         private String codigo;
         private String direccion;
         private int capacidadOperacion;
-        private  ArrayList<Avion> avionesEntrantesAlAeropuerto;   //Aca quise hacer una clase de hangar pero como es generica no se si se puede...
-        Hangares hangar; // Tambien pense un tipo de dato hangar para traer los metodos a esta clase.  Pero no se si es buena practica hacer esto con una clase generica.
+        private  ArrayList<Hangares<?>> hangaresAeropuerto;
+
+
 
 
         //Constructor
@@ -53,11 +54,11 @@ public class Aeropuerto  {
                 this.codigo = codigo;
                 this.direccion = direccion;
                 this.capacidadOperacion = capacidadOperacion;
-                this.avionesEntrantesAlAeropuerto= new ArrayList<>();
-
+                hangaresAeropuerto= new ArrayList<>();
 
 
         }
+
 
         //Getters
         public String getNombre() {
@@ -87,60 +88,59 @@ public class Aeropuerto  {
         public void setCapacidadOperacion(int capacidadOperacion) {
                 this.capacidadOperacion = capacidadOperacion;
         }
+
+        //Metodos
+        public void registrarHangar(Hangares<?> hangar)
+        {
+                hangaresAeropuerto.add(hangar);
+        }
+
+        public void eliminarHangarAeropuerto(Hangares<?> hangar)
+        {
+                hangaresAeropuerto.remove(hangar);
+        }
+        public String mostrarHangaresAeropuerto()
+        {
+                       return hangaresAeropuerto.toString();
+        }
+        public int cuantosHangaresAeropuerto()
+        {
+                return hangaresAeropuerto.size();
+
+        }
+        public int avionesTotalAeropuerto()
+        {
+                int recuento=0;
+                for( Hangares <?> hangar : hangaresAeropuerto )
+                        {
+                               recuento +=  hangar.cuantosAvionesEnHangar();
+                        }
+
+                return recuento;
+
+        }
+
+        public boolean confirmarAvionEntraAlAeropuerto()
+        {
+                boolean entra= false;
+                if(avionesTotalAeropuerto() <=  capacidadOperacion)
+                {
+                        entra= true;
+
+                }
+
+                return entra;
+        }
+
+
+
         //ToString
-
-
         @Override
         public String toString() {
                 return "Aeropuerto{" +
                         "nombre='" + nombre + '\'' +
                         ", codigo='" + codigo + '\'' +
                         ", direccion='" + direccion + '\'' +
-                        ", capacidadOperacion=" + capacidadOperacion +
                         '}';
         }
-
-        //Metodos Esta clase es la que verifica si el avion puede entrar al hangar. Para eso cree un arrayList para almacenar todos los aviones que estan en el aeropuerto llamada avionesEntrantesAlAeropuerto
-        public Boolean ingresarAvionAlAeropuerto(Avion avion)
-        {
-                boolean ingreso= false;
-                if(avionesEntrantesAlAeropuerto.size() < getCapacidadOperacion())
-                {
-                        ingreso= true;
-                        avionesEntrantesAlAeropuerto.add(avion);
-
-                        System.out.println(avion.aterriza());
-
-                }
-                else
-                {
-                        System.out.println("El aeropuerto no tiene mas acceso para los aviones");
-                }
-
-                return  ingreso;
-
-        }
-
-        //Este metodo verifica si esta el avion para retirarlo del aeropuerto. Tendria que retirarlo y automaticamente retirlo del hangar.
-        public void retirarAvionDelAeropuerto(Avion avionesRetirados)
-        {
-                for (Avion avionEncontrado: avionesEntrantesAlAeropuerto)
-                {
-                        if(avionesRetirados.equals(avionEncontrado));
-                        {
-                                avionesEntrantesAlAeropuerto.remove(avionesRetirados);
-                                System.out.println(avionesRetirados.despega());
-                                break;
-                        }
-                }
-
-                System.out.println("El avion " + avionesRetirados.toString() + " no se encuentra en el aeropuerto" );
-
-        }
-
-        public void avionesDentroDelAeropuerto()
-        {
-                System.out.println(avionesEntrantesAlAeropuerto.toString());
-        }
-
 }
