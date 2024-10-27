@@ -38,9 +38,9 @@
 
 | Encapsulamiento y clases abstractas | ✅ Completado |
 
-| Colecciones, enum,  static | ✅ Completado |
+| Colecciones, enum,  static , excepciones, generecidad| ✅ Completado |
 
-| Excepciones, generecidad, Json, JavaFX | 🔄 En progreso |
+| Json, JavaFX | 🔄 En progreso |
 
 | Proyecto Final | 📅 Próximamente |
 
