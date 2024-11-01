@@ -1,64 +1,94 @@
+import PuntoN1yN2.ListaPersonas;
 import PuntoN1yN2.Persona;
+import PuntoN3.Curso;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.*;
-import java.util.Objects;
+import java.util.ArrayList;
 
 public class Archivos {
 
-    public static void crearEscribirArchivo(String nombreArchivo, JSONArray json)
-    {
-        try (FileWriter file = new FileWriter(nombreArchivo)){
-            file.write(json.toString());
-            System.out.println("Creado exitosamente");
-            file.close();
-        }catch (IOException ex)
+    public static void agregarObjectiArchivo(String nombreArchivo , ArrayList<Curso> arrayPersonas)
         {
+           JSONArray arrayJSON= new JSONArray();
+           for(Curso persona : arrayPersonas)
+           {
+               arrayJSON.put(persona.toJsonObject()); // Mandamos todo al arrayJSON a las personas como objects.
+           }
+
+            try(FileWriter file = new FileWriter(nombreArchivo))
+            {
+                file.write(arrayJSON.toString());
+                System.out.println("Archivo creado");
+            }catch (IOException ex)
+            {
+                ex.printStackTrace();
+            }
+        }
+
+    public static void agregarObjectiArchivoCurso(String nombreArchivo, ArrayList<Curso> arrayCursos) {
+        JSONArray arrayJSON = new JSONArray(); // Crear un JSONArray para almacenar los cursos
+
+        for (Curso curso : arrayCursos) {
+            arrayJSON.put(curso.toJsonObject()); // Convertir cada curso a JSONObject y agregarlo al array
+        }
+
+        try (FileWriter file = new FileWriter(nombreArchivo)) {
+            file.write(arrayJSON.toString()); // Escribir el array JSON en el archivo
+            System.out.println("Archivo creado con éxito: " + nombreArchivo);
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
-
     }
 
-    public static JSONTokener leerArchivo(String archivo)
-    {
-
-            JSONTokener jsonTokener= null;
-
-            try
-            {
-                jsonTokener= new JSONTokener(new FileReader(archivo));
-            } catch (FileNotFoundException e) {
-                System.out.println("No se lee el archivo" + archivo);
-                e.printStackTrace();
-            }
-
-
-        return jsonTokener;
-    }
-
-    public static void archivoToObject(String nombreArchivo)
-    {
-        //Crear un jsonObject a partir de la funcion que retorna el tokener.
-        JSONObject jsonObjct= new JSONObject(leerArchivo(nombreArchivo));
-
-        //Crear un jsonArray a partir del jsonObject
-        JSONArray jsonArray = jsonObjct.getJSONArray("personas");
-
-        //Recorrer el jsonArray con un for
-        for(int i=0; i< jsonArray.length(); i++)
+        public static ArrayList<Persona> leerArchivoPersonas(String nombreArchivo)
         {
-            JSONObject personas = new JSONObject(i);
-            String nombre= personas.getString("nombre");
-            int edad= personas.getInt("edad");
-            String dni = personas.getString("dni");
-            char sexo = personas.getString("sexo").charAt(0);
+            ArrayList<Persona> arrayPersonas= new ArrayList<>();
 
-            Persona persona = new Persona(nombre, edad,dni,sexo);
-            System.out.println(persona.toString());
+            try (FileReader read = new FileReader(nombreArchivo)){
+                JSONTokener jsonTokener = new JSONTokener(read);
+                JSONArray jsonArray = new JSONArray(jsonTokener);
+
+                for(int i =0; i< jsonArray.length() ; i++)
+                {
+                    JSONObject personaObj = jsonArray.getJSONObject(i);
+                    Persona persona= Persona.fromJsonObject(personaObj);
+                    arrayPersonas.add(persona);
+
+                }
+            } catch (FileNotFoundException e) {
+            throw new RuntimeException("El archivo no se encontró: " + nombreArchivo, e);
+        } catch (IOException e) {
+            throw new RuntimeException("Error de entrada/salida al leer el archivo: " + nombreArchivo, e);
+        }
+
+            return arrayPersonas;
         }
 
 
+    public static ArrayList<Curso> leerArchivoCursos(String nombreArchivo)
+    {
+        ArrayList<Curso> arrayCursos= new ArrayList<>();
+
+        try (FileReader read = new FileReader(nombreArchivo)){
+            JSONTokener jsonTokener = new JSONTokener(read);
+            JSONArray jsonArray = new JSONArray(jsonTokener);
+
+            for(int i =0; i< jsonArray.length() ; i++)
+            {
+                JSONObject cursoObj = jsonArray.getJSONObject(i);
+                Curso curso = Curso.fromJsonObject(cursoObj);
+                arrayCursos.add(curso);
+
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException("El archivo no se encontró: " + nombreArchivo, e);
+        } catch (IOException e) {
+            throw new RuntimeException("Error de entrada/salida al leer el archivo: " + nombreArchivo, e);
+        }
+
+        return arrayCursos;
     }
 }
