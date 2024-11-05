@@ -17,6 +17,14 @@ public class Habitaculo <T extends Animal>{
         this.capacidadAnimalesHabitaculo = 5;
     }
 
+    public HashSet<T> getListaAnimales() {
+        return listaAnimales;
+    }
+
+    public void setListaAnimales(HashSet<T> listaAnimales) {
+        this.listaAnimales = listaAnimales;
+    }
+
     //Metodos
     public boolean verificarSiEntraAnimal(T t)
     {

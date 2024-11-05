@@ -1,4 +1,7 @@
+import Archivo.Archivo;
 import Clases.*;
+
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,11 +37,11 @@ public class Main {
         Mamifero mamifero5 = new Mamifero(5, "Zorro", 3, "Bosque");
 
         // Crear instancias de Cuidador
-        Cuidador cuidador1 = new Cuidador(9, "Juan Pérez", "Aves");
-        Cuidador cuidador2 = new Cuidador(5, "María Gómez", "Mamíferos");
-        Cuidador cuidador3 = new Cuidador(6, "Carlos López", "Reptiles");
-        Cuidador cuidador4 = new Cuidador(3, "Ana Fernández", "Acuario");
-        Cuidador cuidador5 = new Cuidador(7, "Luis Martínez", "Veterinaria");
+        Cuidador cuidador1 = new Cuidador(5, "Juan Pérez", "Aves");
+        Cuidador cuidador2 = new Cuidador(4, "María Gómez", "Mamíferos");
+        Cuidador cuidador3 = new Cuidador(3, "Carlos López", "Reptiles");
+        Cuidador cuidador4 = new Cuidador(2, "Ana Fernández", "Acuario");
+        Cuidador cuidador5 = new Cuidador(1, "Luis Martínez", "Veterinaria");
 
         //Lista cuidador de animales
         CuidadoresAnimales listaCuidadorAniamles = new CuidadoresAnimales();
@@ -82,8 +85,19 @@ public class Main {
 
 
         //Verificacion si anda el exception
+        /*
         Mamifero mamifero6 = new Mamifero(6, "Tigre", 6, "Selva");
         habitaculoMamiferos.agregarListaHabitaculo(mamifero6);
+
+         */
+
+        //Crear Archivos de aves
+        Archivo.crearArchivo("aves.json" , habitaculoAve.getListaAnimales());
+
+        //Lista ave extraido del archivo
+        HashSet<Ave> listaAvesArchivo = new HashSet<>();
+        listaAvesArchivo = Archivo.listaAve("aves.json");
+        System.out.println(listaAvesArchivo);
 
     }
 }

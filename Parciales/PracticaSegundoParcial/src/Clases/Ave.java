@@ -46,15 +46,15 @@ public final class Ave extends Animal{
     //Metodos
     @Override
     public String dormir() {
-        return "La especie con el id: " + getEdad() + ": "+ getEspecie() + super.dormir();
+        return "La especie con el id " + getIdRegistro() + ": "+ getEspecie() + " de años: "+ getEdad() + super.dormir();
     }
     @Override
     public String aparearse() {
-        return "La especie con el id: " + getEdad() + ": "+ getEspecie() + super.aparearse();
+        return "La especie con el id " + getIdRegistro() + ": "+ getEspecie() + " de años: "+ getEdad() + super.aparearse();
     }
     @Override
     public String comer() {
-        return "La especie con el id: " + getEdad() + ": "+ getEspecie() + super.comer();
+        return "La especie con el id " + getIdRegistro() + ": "+ getEspecie() + " de años: "+ getEdad() + super.comer();
     }
 
     public void ingresarAlimentosLista(String tipoAlimento)
